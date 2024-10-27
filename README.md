@@ -1,5 +1,9 @@
 # Conversor de Divisas
 
+![licencia del repositorio](https://img.shields.io/badge/LICENCIA-MIT-blue)
+![estado del proyecto](https://img.shields.io/badge/ESTADO-MEJORANDO-GREEN)
+![Lenguaje](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+
 Este proyecto es una aplicación de consola en Java que permite realizar 
 conversiones de divisas en tiempo real utilizando la API de 
 [ExchangeRate-API](https://www.exchangerate-api.com/). 
@@ -19,6 +23,7 @@ Para ejecutar este proyecto, asegúrate de tener lo siguiente:
 
 * **Java 17 o superior** instalado.
 * Acceso a internet para obtener las tasas de cambio desde la API.
+* Libería GSON 2.11.0
 * Clave de API de [ExchangeRate-API](https://www.exchangerate-api.com/) válida.
 
 ## Configuración del Proyecto
