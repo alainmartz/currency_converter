@@ -1,28 +1,24 @@
 package com.aluracursos.currencyConverter.main;
-
 import com.aluracursos.currencyConverter.modulos.Consulta;
 import com.aluracursos.currencyConverter.modulos.RealizarConversion;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String convertFrom = "USD"; //Por defecto
         String convertTo = "CLP"; // Por defecto
         double cantidad = 0; //Por defecto
-        double cambio = 0;
         Consulta consulta = new Consulta();
         String menu = """
                 ***********************************
                         CONVERSOR DE DIVISAS
                 ***********************************\s
-                \nBienvenido al conversor de divisas             
+                \nBienvenido al conversor de divisas
                 1 - Dolar => Peso Chileno\s
                 2 - Dolar => Real Brasileño
                 3 - Dolar => Peso Argentino\s
-                4 - Peso Chileno => Dolar\s 
+                4 - Peso Chileno => Dolar\s
                 5 - Real Brasileño => Dolar\s
                 6 - Peso Argentino => Dolar\s
                 7 - Conversión personlizada

@@ -13,7 +13,6 @@ import java.util.Map;
 public class Consulta {
 
     private final Map<String, ConversionRates> cache = new HashMap<>();
-    private final String apikey = "ee20a6896d0407bcb0b61024";
 
 
     public ConversionRates conversor(String convertFrom) {
@@ -21,6 +20,7 @@ public class Consulta {
             return cache.get(convertFrom);
         }
 
+        String apikey = "ee20a6896d0407bcb0b61024";
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/" + apikey + "/latest/" + convertFrom);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
