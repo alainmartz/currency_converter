@@ -24,13 +24,15 @@ Para ejecutar este proyecto, asegúrate de tener lo siguiente:
 ## Configuración del Proyecto
 
 1. **Clona el repositorio**:
-```bash
+```
    git clone https://github.com/alainmartz/currency_converter.git
 ```
+
 2. **Navega al directorio del proyecto:**
-```bash
+```
    cd currency_converter
 ```
+
 3. **Descarga la biblioteca Gson:**
    * Ve a la página de Gson en Maven Central.
    * Busca la última versión (por ejemplo, ``2.11.0``) y descarga el archivo ``.jar``.
@@ -40,13 +42,13 @@ Para ejecutar este proyecto, asegúrate de tener lo siguiente:
    
 5. **Compila el proyecto**: Puedes usar un IDE como IntelliJ IDEA o un compilador de Java en línea de comandos. 
 Si usas la terminal, compila con:
-```bash
+```
    javac -d out -sourcepath src -cp "libs/gson-2.11.0.jar" src/com/aluracursos/currencyConverter/main/Main.java
 
 ```
 
 6. **Ejecuta el programa:**
-```bash
+```
    java -cp "out;libs/gson-2.8.9.jar" com.aluracursos.currencyConverter.main.Main
 ```
 
@@ -54,7 +56,7 @@ Si usas la terminal, compila con:
 
 Al ejecutar el programa, verás el siguiente menú en consola:
 
-```bash
+```
 ***********************************
         CONVERSOR DE DIVISAS
 ***********************************
@@ -100,7 +102,7 @@ Ingrese la cantidad a cambiar: 100
 Si selecciona la opción 7, se le pedirá que ingrese los códigos ISO 
 de las divisas de origen y destino. Por ejemplo:
 
-```bash
+```
 Ha escogido la conversión personalizada.
 Ingrese la divisa de origen: EUR
 Ingrese la divisa de destino: JPY
