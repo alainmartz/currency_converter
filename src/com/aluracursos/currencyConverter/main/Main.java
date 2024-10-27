@@ -33,8 +33,19 @@ public class Main {
             System.out.println(menu);
             if (scan.hasNextInt()) {
                 opcion = scan.nextInt();
-                if (opcion >= 1 && opcion <= 7) {
+                if (opcion >= 1 && opcion <= 6) {
                     System.out.println("Ingrese la cantidad a cambiar");
+                    cantidad = scan.nextDouble();
+                } else if (opcion == 7) {
+                    System.out.println("Ha escogido la conversión personalizada." +
+                            "\nDebe ingresar las divisas de origen y destino según código ISO");
+                    scan.nextLine();
+                    System.out.println("Ingrese divisa de origen");
+                    convertFrom = scan.nextLine().toUpperCase();
+                    System.out.println("Ingrese divisa de destino");
+                    convertTo = scan.nextLine().toUpperCase();
+                    System.out.println("Ingrese la cantidad a cambiar");
+                    cantidad = scan.nextDouble();
                 } else if (opcion == 8) {
                     System.out.println("Saliendo del programa, gracias por utilizar nuestros servicios");
                     break;
@@ -42,7 +53,6 @@ public class Main {
                     System.out.println("Opción no válida. Vuelva a intentar");
                     continue;
                 }
-                cantidad = scan.nextDouble();
                 switch (opcion) {
                     case 1 -> RealizarConversion.realizarConversion("USD", "CLP", cantidad, consulta);
                     case 2 -> RealizarConversion.realizarConversion("USD", "BRL", cantidad, consulta);
@@ -50,21 +60,17 @@ public class Main {
                     case 4 -> RealizarConversion.realizarConversion("CLP", "USD", cantidad, consulta);
                     case 5 -> RealizarConversion.realizarConversion("BRL", "USD", cantidad, consulta);
                     case 6 -> RealizarConversion.realizarConversion("ARS", "USD", cantidad, consulta);
-                    case 7 -> {
-                        System.out.println("Ha escogido la conversión personalizada." +
-                                "\nDebe ingresar las divisas de origen y destino según código ISO");
-                        scan.nextLine(); // Limpiar buffer
-                        System.out.println("Ingrese de origen");
-                        convertFrom = scan.nextLine().toUpperCase();
-                        System.out.println("Ingrese de destino");
-                        convertTo = scan.nextLine().toUpperCase();
-                        RealizarConversion.realizarConversion(convertFrom, convertTo, cantidad, consulta);
+                    case 7 -> RealizarConversion.realizarConversion(convertFrom, convertTo, cantidad, consulta);
+                }
+            } else {
+                System.out.println("Entrada no válida. Por favor ingrese un número.");
+                scan.next(); // Limpiar el buffer de entrada
                     }
                 }
             }
         }
-    }
-}
+
+
 
 
 

@@ -25,14 +25,23 @@ Para ejecutar este proyecto, asegúrate de tener lo siguiente:
 ```bash
    cd currency_converter
 ```
-3. **Compila el proyecto**: Puedes usar un IDE como IntelliJ IDEA o un compilador de Java en línea de comandos. 
+3. **Descarga la biblioteca Gson:**
+   * Ve a la página de Gson en Maven Central.
+   * Busca la última versión (por ejemplo, ``2.11.0``) y descarga el archivo ``.jar``.
+   
+4. **Agrega Gson al proyecto:**
+    * Mueve el archivo  `jar` descargado a una carpeta, que puedes llamar `libs`, para mantener el orden.
+   
+5. **Compila el proyecto**: Puedes usar un IDE como IntelliJ IDEA o un compilador de Java en línea de comandos. 
 Si usas la terminal, compila con:
 ```bash
-   javac -d out -sourcepath src src/com/aluracursos/currencyConverter/main/Main.java
+   javac -d out -sourcepath src -cp "libs/gson-2.11.0.jar" src/com/aluracursos/currencyConverter/main/Main.java
+
 ```
-4. **Ejecuta el programa:**
+
+6. **Ejecuta el programa:**
 ```bash
-   java -cp out com.aluracursos.currencyConverter.main.Main
+   java -cp "out;libs/gson-2.8.9.jar" com.aluracursos.currencyConverter.main.Main
 ```
 
 ## Uso
