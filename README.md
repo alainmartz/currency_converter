@@ -1,19 +1,25 @@
 # Conversor de Divisas
 
-Este proyecto es un conversor de divisas simple que permite a los usuarios convertir entre diferentes monedas utilizando tasas de cambio en tiempo real.
+Este proyecto es una aplicación de consola en Java que permite realizar 
+conversiones de divisas en tiempo real utilizando la API de 
+[ExchangeRate-API](https://www.exchangerate-api.com/). 
+La aplicación proporciona una serie de conversiones predefinidas y la posibilidad 
+de realizar conversiones personalizadas a partir de los códigos de divisas en 
+formato ISO (como USD para el dólar estadounidense o EUR para el euro).
 
 ## Funcionalidades
 
-- Conversión entre varias divisas predeterminadas.
-- Conversión personalizada ingresando las divisas de origen y destino.
-- Interfaz de consola fácil de usar.
+* Conversión de divisas predefinidas (USD a CLP, USD a BRL, etc.).
+* Conversión personalizada entre cualquier par de divisas utilizando códigos ISO.
+
 
 ## Requisitos
 
 Para ejecutar este proyecto, asegúrate de tener lo siguiente:
 
-- **Java 11 o superior** instalado en tu máquina.
-- Acceso a internet para obtener las tasas de cambio desde la API.
+* **Java 17 o superior** instalado.
+* Acceso a internet para obtener las tasas de cambio desde la API.
+* Clave de API de [ExchangeRate-API](https://www.exchangerate-api.com/) válida.
 
 ## Configuración del Proyecto
 
@@ -46,11 +52,24 @@ Si usas la terminal, compila con:
 
 ## Uso
 
-Al ejecutar el programa, verás un menú con las opciones disponibles 
-para convertir divisas. Simplemente selecciona la opción deseada 
-e ingresa la cantidad a cambiar. También puedes elegir la opción de 
-conversión personalizada ingresando los códigos ISO de las monedas 
-que deseas convertir.
+Al ejecutar el programa, verás el siguiente menú en consola:
+
+```bash
+***********************************
+        CONVERSOR DE DIVISAS
+***********************************
+
+Bienvenido al conversor de divisas             
+1 - Dolar => Peso Chileno
+2 - Dolar => Real Brasileño
+3 - Dolar => Peso Argentino
+4 - Peso Chileno => Dolar
+5 - Real Brasileño => Dolar
+6 - Peso Argentino => Dolar
+7 - Conversión personalizada
+8 - Salir
+
+```
 
 ## Opciones de conversión
 
@@ -71,26 +90,11 @@ el valor de la divisa a convertir.
 3. **Verifica el resultado**: El programa mostrará la cantidad convertida en la
 divisa deseada.
 
-
-```bash
-***********************************
-        CONVERSOR DE DIVISAS
-***********************************
-
-Bienvenido al conversor de divisas             
-1 - Dolar => Peso Chileno
-2 - Dolar => Real Brasileño
-3 - Dolar => Peso Argentino
-4 - Peso Chileno => Dolar
-5 - Real Brasileño => Dolar
-6 - Peso Argentino => Dolar
-7 - Conversión personalizada
-8 - Salir
-
-Ingrese la opción deseada: 1
+````
 Ingrese la cantidad a cambiar: 100
-100.00 USD son 80000.00 CLP
-```
+100,00 USD son 94633,66 CLP
+````
+
 ## Ejemplo de conversión personalizada
 
 Si selecciona la opción 7, se le pedirá que ingrese los códigos ISO 
@@ -113,8 +117,3 @@ HTTP a la API y almacena los resultados en un caché para optimizar el rendimien
 lógica de conversión y muestra los resultados en la consola.
 * **com.aluracursos.currencyConverter.modulos.ConversionRates**: Clase que mapea la respuesta 
 JSON de la API a un objeto en Java para facilitar el acceso a las tasas de conversión.
-
-## Notas
-
-*  La API utilizada para obtener las tasas de cambio es https://v6.exchangerate-api.com/. 
-Asegúrate de tener una clave de API válida y de reemplazarla en el código si es necesario.
